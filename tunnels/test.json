@@ -1,0 +1,8 @@
+    {
+        "jump_gateway": "jump.mydomain.com",
+        "user": "username",
+        "tunnels": [
+            "mongo001.mydomain.com:27017",
+            "mongo002.mydomain.com:27017"
+        ]
+    }
