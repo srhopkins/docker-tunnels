@@ -18,7 +18,8 @@ for hosts in ['/etc/hosts',] + glob.glob('/etc/hosts.d/*'):
         lo_used += [ip2int(ip) for ip in re.findall(r'127\.[0-9]+(?:\.[0-9]+){2}', f.read())]
 
 def new_lo(s):
-    return s + 1 if s + 1 not in lo_used else new_lo(s+1)
+    plused = s + 1
+    return plused if plised not in lo_used else new_lo(plused)
     
 def make_script(json_file, scriptname):
     tunnels_json = json.load(open(json_file))
