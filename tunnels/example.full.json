@@ -1,0 +1,10 @@
+    {
+        "jump_gateway": "jump.mydomain.com",
+        "user": "username",
+        "identity_file": "/deployment/id_rsa",
+        "opts": "-M -S myapps.socket -fnNT"
+        "tunnels": [
+            "mongo001.mydomain.com:27017",
+            "mongo002.mydomain.com:27017"
+        ]
+    }
