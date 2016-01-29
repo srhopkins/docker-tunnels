@@ -1,6 +1,6 @@
 docker-tunnels
 ---
-In a tech utopia there would never be a need to tunnel as our environment would be perfectly segmented with no need to cross boundaries without appropriately established routes. Since there is no utopia this project exists when you just need to get something done; whatever your reasons may be.
+In techtopia we would never need to cross perfectly segmented network boundaries outside engineered established routes. This project exists for those in the real world who just need to get something done; whatever your reasons may be.
 
 Sample `tunnel_name.json` : file(s) name must end in `.json`
 

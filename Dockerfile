@@ -1,15 +1,9 @@
-FROM maven:jdk6
+FROM ubuntu:trusty
+MAINTAINER srhopkins@gmail.com
 
-EXPOSE 8080
+RUN apt-get update && apt-get install openssh-clients dnsmasq && \
+    echo 'user=root' > /etc/dnsmasq.conf && \
+    echo 'addn-hosts=/etc/hosts.d' >> /etc/dnsmasq.conf && \
+    mkdir /etc/hosts.d && \
+    echo 'nohook resolv.conf' >> /etc/dhcpcd.conf
 
-COPY apache* .
-RUN tar xf apache* -C /usr/share
-
-COPY tomcat-users.xml /usr/share/apache-*/conf/tomcat-users.xml
-COPY docker_tunnels.py /opt/docker_tunnels.py
-COPY start-tomcat.sh /opt/start-tomcat.sh
-RUN chmod 600 /usr/share/apache-tomcat-*/conf/tomcat-users.xml && \
-	chmod +x /opt/docker_tunnels.py && \
-	chmod +x /opt/start-tomcat.sh
-
-ENTRYPOINT ["/opt/start-tomcat.sh"]

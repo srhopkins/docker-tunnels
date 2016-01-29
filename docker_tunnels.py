@@ -56,10 +56,10 @@ def make_script(json_file, scriptname):
 
 
 # Do the work
-for json_file in glob.glob("/tunnels/*.json"):
+for json_file in glob.glob("tunnels/*.json"):
     script, hosts = make_script(json_file, scriptname)
     fname = os.path.splitext(os.path.basename(json_file))[0]
-    with open('/tunnels/%s.sh' % fname, 'w') as f:
+    with open('tunnels/%s.sh' % fname, 'w') as f:
         f.write(script)
-    with open('/etc/hosts.d/%s.hosts' % fname, 'w') as f:
+    with open('etc/hosts.d/%s.hosts' % fname, 'w') as f:
         f.write(hosts)
